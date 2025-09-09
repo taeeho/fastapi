@@ -4,6 +4,7 @@ import AuthButtons from "./auth/DAuthButtons";
 import MobileMenu from "./layout/MobileMenu";
 import MobileToggleButton from "./layout/MobileToggleButton";
 import Categories from "./layout/Categories";
+import SearchMenu from "./layout/SearchMenu";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-14 md:h-20">
           <div className="flex items-center flex-1">
             <Logo />
+            <SearchMenu />
           </div>
           <AuthButtons
             isAuthenticated={isAuthenticated}
