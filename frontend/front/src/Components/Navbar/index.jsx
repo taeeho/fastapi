@@ -35,6 +35,15 @@ function Navbar() {
             onSignupClick={onSignupClick}
           />
         </div>
+          <MobileMenu
+            isAuthenticated={isAuthenticated}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            onLogoutClick={onLogoutClick}
+            onLoginClick={onLoginClick}
+            onSignupClick={onSignupClick}
+          />
+      <button onClick={()=>setIsOpen(!isOpen)}>Test Button</button>
       </div>
     </nav>
   );
