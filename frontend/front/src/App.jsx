@@ -1,11 +1,18 @@
 import React from 'react';
+import Navbar from './Components/Navbar';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Navbar />
+  },
+]);
+
 
 const App = () => {
   return (
-    <div className='flex items-center justify-center min-h-screen bg-white text-black'>
-      <h1 className='text-2xl font-bold'>Hello, React</h1>
-      
-    </div>
+    <RouterProvider router ={router}/>
   );
 };
 
