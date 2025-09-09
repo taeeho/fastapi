@@ -2,6 +2,8 @@ import { useState } from "react";
 import Logo from "./layout/Logo";
 import AuthButtons from "./auth/DAuthButtons";
 import MobileMenu from "./layout/MobileMenu";
+import MobileToggleButton from "./layout/MobileToggleButton";
+import Categories from "./layout/Categories";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +20,10 @@ function Navbar() {
   const onLogoutClick = () => {
     alert("로그아웃");
   };
+
+  const onCategoryClick=(category)=>{
+    alert(category)
+  }
 
   return (
     <nav className="bg-purple-500">
@@ -43,7 +49,7 @@ function Navbar() {
             onLoginClick={onLoginClick}
             onSignupClick={onSignupClick}
           />
-      <button onClick={()=>setIsOpen(!isOpen)}>Test Button</button>
+        <Categories onClick={onCategoryClick} />
       </div>
     </nav>
   );

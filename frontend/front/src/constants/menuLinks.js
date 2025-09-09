@@ -1,0 +1,1 @@
+export const MENU_LINKS = [{ to: "/create-topic", label: "글 생성" }];

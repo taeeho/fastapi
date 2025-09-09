@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.db.database import Base, async_engine
 from fastapi.concurrency import asynccontextmanager
-
+from app.db.models import user
+from app.routers import user
 
 # 앱 시작과 종료 시 실행될 작업을 정의
 @asynccontextmanager
@@ -24,6 +25,8 @@ app.add_middleware(
   allow_credentials = True,
   allow_methods=["*"],
   allow_headers = ["*"])
+
+app.include_router(user.router)
 
 
 # if __name__=="__main__":
