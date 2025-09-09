@@ -2,13 +2,13 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 
 const MobileMenu = ({
-  user,
+  // user,
   isOpen,
-  setIsOpen,
-  isAuthenticated,
-  onLoginClick,
-  onLogoutClick,
-  onSigupClick,
+  // setIsOpen,
+  // isAuthenticated,
+  // onLoginClick,
+  // onLogoutClick,
+  // onSigupClick,
 }) => {
   return (
     <div
@@ -18,10 +18,20 @@ const MobileMenu = ({
           : "opacity-0 -translate-y-2 pointer-events-none h-0 overflow-hidden"
       }`}
     >
-      <div>테스트1</div>
-      <div>테스트2</div>
-      <div>테스트3</div>
-      <div>테스트4</div>
+      <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <form className="relative max-w-6xl mx-auto mb-4">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <BiSearch className="h-5 w-5 text-gray-400" />
+          </div>
+          <input
+            type="text"
+            className="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-purple-100 text-purple-900 placeholder-purple-500 hover:bg-white hover:text-purple-900 hover:placeholder-purple-400 sm:text-sm transtiion-all duration-500"
+            placeholder="검색하기"
+          />
+        </form>
+
+        <div className="pb-2 mb-2"></div>
+      </div>
     </div>
   );
 };
