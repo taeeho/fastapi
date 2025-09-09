@@ -11,13 +11,13 @@ engine = create_engine(settings.sync_db_url, pool_pre_ping=True)
 
 Base = declarative_base()
 
+# FastAPI Dependency
 async def get_db():
-  session= None
-  try:
     session = AsyncSessionLocal()
-    yield session
-  except:
-    pass
-  finally:
-    if session:
-      await session.close()
+    try:
+        yield session
+    except Exception as e:
+        print(f"DB Error: {e}")  # 디버깅용
+        raise  # 반드시 예외를 다시 던져야 FastAPI가 인식
+    finally:
+        await session.close()
